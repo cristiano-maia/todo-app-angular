@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
-.box-titulo{
+header{
     background-color: black;
     color: white;
     height: 60px;
@@ -10,7 +10,7 @@
 
 }
 
-.box.titulo h1{
+h1{
     font-size: 22px;
     font-weight: bold;
     font-family:Arial, Helvetica, sans-serif;
