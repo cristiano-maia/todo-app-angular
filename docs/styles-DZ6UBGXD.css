@@ -520,7 +520,15 @@ select:disabled {
 [type=reset],
 [type=submit],
 button {
-    -webkit-appearance: button
+    -webkit-appearance: button; /* Para navegadores WebKit */
+    appearance: button;         /* Para outros navegadores */
+    /* Outros estilos para o botão */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 [type=button]:not(:disabled),
@@ -580,9 +588,21 @@ legend+* {
 }
 
 [type=search] {
-    -webkit-appearance: textfield;
-    outline-offset: -2px
+    -webkit-appearance: textfield; /* Para WebKit */
+    appearance: textfield;         /* Para outros navegadores */
+    outline-offset: 0; /* Remova ou ajuste para garantir um estilo consistente */
+    
+    /* Estilos adicionais para personalizar */
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none; /* Remove sombra ao focar */
 }
+
+[type=search]:focus {
+    outline-color: #007BFF; /* Ajusta cor do contorno ao focar */
+}
+
 
 ::-webkit-search-decoration {
     -webkit-appearance: none
@@ -598,9 +618,23 @@ legend+* {
 }
 
 ::file-selector-button {
-    font: inherit;
-    -webkit-appearance: button
+    font: inherit;            /* Herda a fonte do elemento pai */
+    -webkit-appearance: button; /* Para navegadores WebKit */
+    appearance: button;       /* Para outros navegadores */
+    
+    /* Estilos adicionais de personalização */
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+::file-selector-button:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
 
 output {
     display: inline-block
@@ -2738,7 +2772,7 @@ textarea.form-control-lg {
     background-size: contain;
     border: var(--bs-border-width) solid var(--bs-border-color);
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    
     print-color-adjust: exact
 }
 
