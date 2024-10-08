@@ -37,4 +37,13 @@ export class AppComponent {
   definirPagina(pagina: number) {
     this.atualPagina = pagina;
   }
+
+  // Método para resetar a página
+  resetarPagina() {
+    this.atualPagina = 1;
+  }
+
+  constructor() {
+    this.resetarPagina(); // Garante que a página inicial seja sempre a 1
+  }
 }
