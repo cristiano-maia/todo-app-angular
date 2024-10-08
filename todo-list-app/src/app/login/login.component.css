@@ -1,0 +1,16 @@
+.container {
+    max-width: 400px;
+   
+  }
+
+  .login-container{
+    width: 450px;
+    margin: 50px auto;
+  
+  }
+
+  input{
+    height: 40px;
+  
+  }
+  

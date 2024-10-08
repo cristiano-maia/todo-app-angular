@@ -1,0 +1,26 @@
+/* Estilo para riscar a tarefa quando estiver concluída */
+.concluida {
+    text-decoration: line-through;
+    color: gray; /* Torna a cor um pouco mais clara para destacar o status */
+  }
+
+  button{
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+/* Define que o conteúdo da célula pode ocupar várias linhas */
+td {
+    vertical-align: top; /* Alinha o conteúdo no topo da célula */
+    word-break: break-word; /* Permite quebra de palavras longas */
+    white-space: normal; /* Permite que o conteúdo quebre linhas */
+  }
+  
+  td.descricao {
+    max-width: 400px; /* Define uma largura máxima para a descrição */
+    white-space: normal; /* Permite que o conteúdo quebre linhas */
+    word-break: break-word; /* Quebra as palavras longas */
+    text-align: justify;
+  }
+  
+  

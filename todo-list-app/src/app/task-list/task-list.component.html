@@ -1,0 +1,33 @@
+<!-- TaskListComponent -->
+<div class="container">
+  <h2>Lista de Tarefas</h2>
+  
+  <button class="btn btn-primary mb-3" (click)="navegarParaNovaTarefa()">Nova Tarefa</button>
+  <button class="btn btn-danger mb-3" (click)="fazerLogout()">Logout</button>
+
+  <!-- Tabela de tarefas -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarefa of tarefas | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
+        <td>{{ tarefa.titulo }}</td>
+        <td class="descricao">{{ tarefa.descricao }}</td>
+        <td>{{ tarefa.status }}</td>
+        <td>
+          <button *ngIf="tarefa.status !== 'concluida'" class="btn btn-success" (click)="concluirTarefa(i)">Concluir</button>
+          <button class="btn btn-primary" (click)="editarTarefa(i)">Editar</button>
+          <button class="btn btn-danger" (click)="excluirTarefa(i)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="page = $event"></pagination-controls> <!-- Componente de paginação -->
+</div>
