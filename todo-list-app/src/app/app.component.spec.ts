@@ -19,14 +19,14 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy(); // Verifica se o componente foi criado
   });
 
-  it(`should have as title 'Teste Desenvolvedor Angular'`, () => {
-    expect(component.title).toEqual('Teste Desenvolvedor Angular'); // Verifica se o título está correto
+  it(`should have as title 'Desenvolvimento Angular'`, () => {
+    expect(component.title).toEqual('Desenvolvimento Angular'); // Verifica se o título está correto
   });
 
   it('should render title in a h1 tag', () => {
     // Atualiza a visualização
     fixture.detectChanges(); 
     const compiled = fixture.nativeElement; // Obtém o elemento DOM
-    expect(compiled.querySelector('h1').textContent).toContain('Teste Desenvolvedor Angular'); // Verifica se o título está sendo renderizado
+    expect(compiled.querySelector('h1').textContent).toContain('Desenvolvimento Angular'); // Verifica se o título está sendo renderizado
   });
 });
