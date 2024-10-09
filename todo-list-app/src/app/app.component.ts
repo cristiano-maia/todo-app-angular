@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router'; // Importe RouterModule
   imports: [RouterModule] // Adicionando RouterModule aos imports
 })
 export class AppComponent {
-  title = 'Denvolvimento Angular';
+  title = 'Desenvolvimento Angular';
   tarefas: Tarefa[] = []; // Lista de tarefas
   atualPagina: number = 1; // Adicionando a propriedade atualPagina
   tarefasPorPagina: number = 5; // Número de tarefas por página
