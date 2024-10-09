@@ -10,7 +10,7 @@ export class TarefaService {
   private listaDeTarefasAtualizada = new BehaviorSubject<Tarefa[]>(this.tarefas); // BehaviorSubject para observar a lista de tarefas
 
   // Armazenar a tarefa para edição
-  private tarefaParaEdicao = new BehaviorSubject<{ tarefa: Tarefa, indice: number } | null>(null); // Comportamento para a tarefa em edição
+  private tarefaParaEdicao = new BehaviorSubject<{ tarefa: Tarefa | null, indice: number | null } | null>(null); // Comportamento para a tarefa em edição
 
   // Variáveis para gerenciar a paginação
   private paginaAtual: number = 1; // Página atual
@@ -74,7 +74,7 @@ export class TarefaService {
   }
 
   // Método para definir a tarefa e índice para edição
-  definirTarefaParaEdicao(tarefa: Tarefa, indice: number) {
+  definirTarefaParaEdicao(tarefa: Tarefa | null, indice: number | null) { // Agora aceita null
     console.log('Definindo tarefa para edição: ', tarefa, 'índice: ', indice); // Log para depuração
     this.tarefaParaEdicao.next({ tarefa, indice }); // Atualiza o BehaviorSubject com a tarefa e índice
   }

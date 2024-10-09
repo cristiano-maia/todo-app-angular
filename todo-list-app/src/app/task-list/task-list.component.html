@@ -1,33 +1,41 @@
 <!-- TaskListComponent -->
 <div class="container">
-  <h2>Lista de Tarefas</h2>
+  <h2 class="text-center my-4">Lista de Tarefas</h2>
   
-  <button class="btn btn-primary mb-3" (click)="navegarParaNovaTarefa()">Nova Tarefa</button>
-  <button class="btn btn-danger mb-3" (click)="fazerLogout()">Logout</button>
+  <!-- Ajuste para o botão 'Logout' à direita e 'Nova Tarefa' à esquerda -->
+  <div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary" (click)="navegarParaNovaTarefa()">Nova Tarefa</button>
+    <button class="btn btn-danger" (click)="fazerLogout()">Logout</button>
+  </div>
 
-  <!-- Tabela de tarefas -->
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Descrição</th>
-        <th>Status</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tarefa of tarefas | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
-        <td>{{ tarefa.titulo }}</td>
-        <td class="descricao">{{ tarefa.descricao }}</td>
-        <td>{{ tarefa.status }}</td>
-        <td>
-          <button *ngIf="tarefa.status !== 'concluida'" class="btn btn-success" (click)="concluirTarefa(i)">Concluir</button>
-          <button class="btn btn-primary" (click)="editarTarefa(i)">Editar</button>
-          <button class="btn btn-danger" (click)="excluirTarefa(i)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Tabela de tarefas com responsividade -->
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Descrição</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
+          <td>{{ tarefa.titulo }}</td>
+          <td class="descricao">{{ tarefa.descricao }}</td>
+          <td>{{ tarefa.status }}</td>
+          <td>
+            <button *ngIf="tarefa.status !== 'concluida'" class="btn btn-success me-2" (click)="concluirTarefa(i)">Concluir</button>
+            <button class="btn btn-primary me-2" (click)="editarTarefa(i)">Editar</button>
+            <button class="btn btn-danger" (click)="excluirTarefa(i)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <pagination-controls (pageChange)="page = $event"></pagination-controls> <!-- Componente de paginação -->
+  <!-- Centralizando a paginação -->
+  <div class="d-flex justify-content-center mt-3">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
 </div>

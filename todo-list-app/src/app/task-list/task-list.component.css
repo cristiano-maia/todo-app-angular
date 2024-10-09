@@ -1,26 +1,65 @@
 /* Estilo para riscar a tarefa quando estiver concluída */
 .concluida {
-    text-decoration: line-through;
-    color: gray; /* Torna a cor um pouco mais clara para destacar o status */
-  }
+  text-decoration: line-through;
+  color: gray; /* Torna a cor um pouco mais clara para destacar o status */
+  opacity: 0.7; /* Reduz a opacidade para dar mais destaque às tarefas pendentes */
+}
 
-  button{
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  
+/* Melhorar a estética dos botões */
+button {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px 15px; /* Aumenta o tamanho dos botões para melhor usabilidade */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+}
+
 /* Define que o conteúdo da célula pode ocupar várias linhas */
 td {
-    vertical-align: top; /* Alinha o conteúdo no topo da célula */
-    word-break: break-word; /* Permite quebra de palavras longas */
-    white-space: normal; /* Permite que o conteúdo quebre linhas */
+  vertical-align: top; /* Alinha o conteúdo no topo da célula */
+  word-break: break-word; /* Permite quebra de palavras longas */
+  white-space: normal; /* Permite que o conteúdo quebre linhas */
+  padding: 10px; /* Adiciona um pouco de espaçamento interno para melhorar a legibilidade */
+}
+
+/* Estilo para a coluna de descrição, tornando-a mais legível */
+td.descricao {
+  max-width: 400px; /* Define uma largura máxima para a descrição */
+  white-space: normal; /* Permite que o conteúdo quebre linhas */
+  word-break: break-word; /* Quebra as palavras longas */
+  text-align: justify; /* Justifica o texto para melhor legibilidade */
+}
+
+/* Responsividade: ajuste para telas menores */
+@media (max-width: 768px) {
+  td {
+      font-size: 14px; /* Diminui o tamanho da fonte em telas menores */
+      padding: 8px; /* Reduz o padding para economizar espaço */
   }
-  
-  td.descricao {
-    max-width: 400px; /* Define uma largura máxima para a descrição */
-    white-space: normal; /* Permite que o conteúdo quebre linhas */
-    word-break: break-word; /* Quebra as palavras longas */
-    text-align: justify;
+
+  button {
+      width: 100%; /* Os botões ocupam toda a largura da célula em telas pequenas */
+      margin-top: 5px; /* Adiciona um pequeno espaçamento acima dos botões */
   }
-  
-  
+
+  .table-responsive {
+      overflow-x: auto; /* Garante que a tabela seja rolável em telas menores */
+  }
+}
+
+/* Estilo para a tabela em geral */
+.table {
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Espaçamento entre as linhas */
+}
+
+.table thead th {
+  background-color: #f8f9fa; /* Fundo mais claro para o cabeçalho */
+  padding: 15px; /* Adiciona mais espaço para o cabeçalho */
+  font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+}
+
+.table tbody tr {
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve nas linhas */
+}

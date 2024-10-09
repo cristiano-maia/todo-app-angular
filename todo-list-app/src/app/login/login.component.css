@@ -1,16 +1,39 @@
 .container {
-    max-width: 400px;
-   
-  }
+  max-width: 1600px; /* Mantém a largura máxima para o container */
+  margin-top: -120px; /* Aumenta a margem negativa para mover o card mais para cima */
+}
 
-  .login-container{
-    width: 450px;
-    margin: 50px auto;
-  
-  }
+.card {
+  border-radius: 8px; /* Bordas arredondadas para o card */
+  padding: 30px; /* Aumentar o padding para mais espaçamento interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para dar destaque */
+}
 
-  input{
-    height: 40px;
-  
+h2 {
+  font-size: 24px; /* Ajustando o tamanho do título */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 30px; /* Aumentando o espaço abaixo do título */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Aumenta o espaço entre os grupos de formulário */
+}
+
+input {
+  height: 45px; /* Aumenta a altura dos campos de entrada */
+}
+
+.btn {
+  width: 100%; /* Botões ocupando 100% da largura */
+  padding: 12px; /* Aumenta a altura do botão */
+}
+
+.vh-100 {
+  height: 100vh; /* Garante que o container ocupe toda a altura da tela */
+}
+
+@media (max-width: 576px) {
+  .col-sm-8 {
+      width: 100%; /* Adapta o tamanho do formulário em telas menores */
   }
-  
+}

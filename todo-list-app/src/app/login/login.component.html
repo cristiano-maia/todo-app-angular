@@ -1,26 +1,33 @@
-<div class="login-container">
-  <h2>Login</h2>
-  
-  <form (ngSubmit)="fazerLogin()"> <!-- Chama a função fazerLogin ao submeter o formulário -->
-  
-    <div class="form-group">
-      <label for="usuario">Usuário</label>
-      <input type="text" id="usuario" [(ngModel)]="usuario" name="usuario" class="form-control" required /> <!-- Campo obrigatório para o nome do usuário -->
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="col-md-4 col-sm-8">
+    <div class="card shadow-sm p-4" style="background-color: #f8f9fa;">
+      <h2 class="text-center mb-4" style="font-size: 24px;">Login</h2>
+      
+      <form (ngSubmit)="fazerLogin()">
+      
+        <div class="form-group mb-3">
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" [(ngModel)]="usuario" name="usuario" class="form-control" placeholder="Digite seu usuário" required />
+        </div>
+      
+        <div class="form-group mb-4">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" [(ngModel)]="senha" name="senha" class="form-control" placeholder="Digite sua senha" required />
+        </div>
+      
+        <button type="submit" class="btn btn-primary btn-block w-100">Entrar</button>
+      
+      </form>
+      
+      <!-- Mensagem de erro -->
+      <div *ngIf="erroLogin" class="text-danger mt-3 text-center">
+        Usuário ou senha inválidos
+      </div>
+      
+      <!-- Mensagem de sucesso -->
+      <div *ngIf="loginSucesso" class="text-success mt-3 text-center">
+        Login bem-sucedido
+      </div>
     </div>
-  
-    <div class="form-group">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" [(ngModel)]="senha" name="senha" class="form-control" required /> <!-- Campo obrigatório para a senha -->
-    </div>
-  
-  <br>
-    <button type="submit" class="btn btn-primary btn-block">Entrar</button> <!-- Botão para submeter o formulário -->
-  
-  </form>
-  
-  <!-- Mensagem de erro ao tentar fazer login -->
-  <div *ngIf="erroLogin" class="text-danger mt-2">Usuário ou senha inválidos</div>
-  
-  <!-- Mensagem de sucesso ao realizar login -->
-  <div *ngIf="loginSucesso" class="text-success mt-2">Login bem-sucedido</div>
+  </div>
 </div>
