@@ -11,7 +11,7 @@ export class AuthService {
 
   // Dados de login mock (simulados) para fins de teste
   private usuarioMock = 'admin';
-  private senhaMock = '123456';
+  private senhaMock = 'admin';
 
   constructor(private router: Router) {}
 
